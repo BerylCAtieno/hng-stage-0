@@ -39,7 +39,7 @@ func GetProfileHandler(w http.ResponseWriter, r *http.Request) {
 
 	ResponsePayload.Status = "success"
 	ResponsePayload.User = user
-	ResponsePayload.Timestamp = now.String()
+	ResponsePayload.Timestamp = now.Format(time.RFC3339Nano)
 	ResponsePayload.Fact = catFact
 
 	w.Header().Set("Content-Type", "application/json")
